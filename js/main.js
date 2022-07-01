@@ -1,4 +1,4 @@
-let characters = ["Steve", "Nancy", "Robin", "Will", "Mike", "Joyce", "Barb",
+let characters = ["Steve", "Nancy", "Robin", "Will", "Mike", "Joyce", "Barb", "Jonathan",
 "Yuri", "Fred", "Erica", "Dustin", "Hopper", "Chrissy", "Dr.Owens", "Murray", "Billy", "Eleven", "Max", "Lucas", 
 "Bob", "Angela", "Suzie", "Mrs.Wheeler", "Argyle", "Mr.Wheeler", 
 "Eddie", "Dr.Brenner", "Dr.Owens", "010", "008", 

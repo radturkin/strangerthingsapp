@@ -13,4 +13,4 @@ console.log(srci)
 
 document.querySelector('img').src = srci
 
-document.querySelector('h1').innerText = `You are ${characterChosen}`
+document.querySelector('h1').innerText = `Your Random Character is ${characterChosen}`

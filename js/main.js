@@ -78,5 +78,7 @@ function zombie(){
 document.getElementById("s5pred").onclick = season5
 document.getElementById("mystery").onclick = mystery
 document.getElementById("zombie").onclick = zombie
+document.getElementById("chooser").onclick = mainCharacter
+
 
 document.getElementsByTagName("img").onclick = mainCharacter

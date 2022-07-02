@@ -59,6 +59,32 @@ function zombie(){
     return newzombie
 }
 
+function life(){
+
+let lifelist=["Your mom/dad: ",
+"\nYour mom/dad: ",
+"\nYour brother/sister: ",
+"\nYour brother/ sister: ",
+"\nYour BFF: ",
+"\nYour crush: ",
+"\nYour crush’s bf/gf: ",
+"\nYour idol: ",
+"\nYour Rival: ",
+"\nYour Bully: ",
+"\nFavorite teacher: ",
+"\nPet: ",
+"\nYou are: ",
+"\nWho does your BFF end up with: ",
+"\nWho does yout crush end up with: ",
+"\nWho do you end up with: "]
+
+let newlife = lifelist.map(x=> `${x} ${mainCharacter()}`)
+    console.log(newlife)
+
+    document.querySelector('p').innerText = newlife.join(" ")
+
+}
+
 // let buttonHome = document.querySelector("#s5pred");
 // let CountButtonHomeClicks = 0;
 // let char = []
@@ -79,6 +105,7 @@ document.getElementById("s5pred").onclick = season5
 document.getElementById("mystery").onclick = mystery
 document.getElementById("zombie").onclick = zombie
 document.getElementById("chooser").onclick = mainCharacter
+document.getElementById("life").onclick = life
 
 
 document.getElementsByTagName("img").onclick = mainCharacter

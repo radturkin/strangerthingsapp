@@ -1,5 +1,5 @@
 ul {
-    color: white;
+    color: rgb(255, 0, 128);
     font-size: 26pt;
 }
 
@@ -11,6 +11,7 @@ h1, h2 {
 p {
     color: white;
     font-size: 18pt;
+    font-weight: bolder;
 }
 
 body {

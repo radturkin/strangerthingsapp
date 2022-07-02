@@ -40,6 +40,43 @@ function mystery(){
     return newArray
 }
 
+function zombie(){
+    let zombieArray = ["will become a zombie but we don’t know why. " ,  
+    "will discover the zombie and be so shocked that they call the police but it’s too late the zombie broke out and bit ",
+    ", ", "and, ", ". The three of them become zombies and terrorize the town. ", ", ", ", ", ", ", ", ", "and ",
+    " ,are the main group. And they are locked in an abandoned warehouse with ",", who became a zombie. ", ", kills the zombie. They find ",
+    ",  A scientist with the cure but it is stuck back at his lab ",
+    "helps them sneak out but dies. While ", "and ", "sacrifice themselves for the greater good. " ,
+    "eventually finds the cure. But then we realize that it was ",
+    "the doctor who caused the infection. And they are not happy the group found a cure so they kill ", "and ",
+    ". But overall ",
+    "kills the corrupt doctor and everyone lives happy ever after(Or do they?)"]
+    let newzombie = zombieArray.map(x=> `${mainCharacter()} ${x}`)
+    console.log(newzombie)
+
+    document.querySelector('p').innerText = newzombie.join(" ")
+
+    return newzombie
+}
+
+// let buttonHome = document.querySelector("#s5pred");
+// let CountButtonHomeClicks = 0;
+// let char = []
+// buttonHome.addEventListener("click", function() {
+//   CountButtonHomeClicks += 1;
+//   console.log(CountButtonHomeClicks);
+//   char=newArray[CountButtonHomeClicks];
+//   char=char.split(" ");
+//   guy=char[0];
+//     srci="images/"+guy+".png"
+//     document.querySelector('img').src = srci
+//     document.querySelector('h1').innerText = `Your Random Character is ${guy}`
+
+//   document.querySelector('p').innerText = newArray[CountButtonHomeClicks]
+//   return CountButtonHomeClicks
+// });
 document.getElementById("s5pred").onclick = season5
 document.getElementById("mystery").onclick = mystery
+document.getElementById("zombie").onclick = zombie
+
 document.getElementsByTagName("img").onclick = mainCharacter

@@ -3,7 +3,7 @@ ul {
     font-size: 26pt;
 }
 
-h1 h2 {
+h1, h2 {
     color: white
     font-size: 32pt;
 }

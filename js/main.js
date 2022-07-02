@@ -33,10 +33,30 @@ function season5(){
   
     let newArray = storyArray.map(x=> `${mainCharacter()} ${x}`)
     console.log(newArray)
+
+    document.querySelector('p').innerText = newArray.join(" ")
+
     return newArray
     
     
 }
-seasonfive=season5()
-document.querySelector('p').innerText = seasonfive.join(" ")
 
+function mystery(){
+    let lineup = ["dies.", "finds the body.", "is the most sad", "is the lead detective", "is the first suspect",
+    "is their alibi", ", ", ", and ", "are the final three suspects", "is arrested", 
+    "was the killer", "was the accomplice"]
+    let newArray = lineup.map(x=> `${mainCharacter()} ${x}`)
+    console.log(newArray)
+
+    document.querySelector('p').innerText = newArray.join(" ")
+
+    return newArray
+
+}
+//seasonfive=season5()
+//document.querySelector('p').innerText = seasonfive.join(" ")
+
+document.getElementById("s5pred").onclick = season5
+document.getElementById("mystery").onclick = mystery
+
+document.getElementsByTagName("img").onclick = mainCharacter

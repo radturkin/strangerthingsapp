@@ -1,17 +1,16 @@
 ul {
     color: red;
     font-size: 26pt;
-    background-color: black;
 }
 
-h2 {
+h1 h2 {
+    color: white
     font-size: 32pt;
-    background-color: blueviolet;
 }
 
 p {
+    color: black
     font-size: 18pt;
-    background-color: gold;
 }
 
 body {

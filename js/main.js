@@ -12,26 +12,20 @@ function mainCharacter(){
     return characterChosen
 }
 
-// let storyArray = ["will be the main character this season. ", "will go missing and start the story. ",
-// "wants to investigate but ", "protests against this ", ", ", ", ", "and " ,"go off to search for them. ", 
-// "will find a clue while ", "solves it. Which leads them to believe that ","killed them. But they figure out that it was actually ", 
-// ". ", "and ","will sacrifice themselves to defeat the killer and ",  "will cry.But at the end we find out that ", 
-// "was responsible for these deaths and they get arrested. Ultimately ","was the most heroic character. "]
+let storyArray = ["will be the main character this season. ", "will go missing and start the story. ",
+"wants to investigate but ", "protests against this ", ", ", ", ", "and " ,"go off to search for them. ", 
+"will find a clue while ", "solves it. Which leads them to believe that ","killed them. But they figure out that it was actually ", 
+". ", "and ","will sacrifice themselves to defeat the killer and ",  "will cry.But at the end we find out that ", 
+"was responsible for these deaths and they get arrested. Ultimately ","was the most heroic character. "]
 
 function season5(){
     localStorage.setItem("botscore",0)
 
-    let storyArray = ["will be the main character this season. ", "will go missing and start the story. ",
-     "wants to investigate but ", "protests against this ", ", ", ", ", "and " ,"go off to search for them. ", 
-    "will find a clue while ", "solves it. Which leads them to believe that ","killed them. But they figure out that it was actually ", 
-    ". ", "and ","will sacrifice themselves to defeat the killer and ",  "will cry.But at the end we find out that ", 
-    "was responsible for these deaths and they get arrested. Ultimately ","was the most heroic character. "]
-  
     //let newArray = storyArray.map(x=> `${mainCharacter()} ${x}`)
 
     //document.querySelector('p').innerText = newArray.join(" ")
 
-    document.querySelector('button').innerText = "what happens?"
+    document.querySelector('button').innerText = "what happens season 5?"
 
     document.querySelector('button').addEventListener('click', addLine)
 

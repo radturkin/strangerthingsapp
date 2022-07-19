@@ -12,19 +12,42 @@ function mainCharacter(){
     return characterChosen
 }
 
+let storyArray = ["will be the main character this season. ", "will go missing and start the story. ",
+"wants to investigate but ", "protests against this ", ", ", ", ", "and " ,"go off to search for them. ", 
+"will find a clue while ", "solves it. Which leads them to believe that ","killed them. But they figure out that it was actually ", 
+". ", "and ","will sacrifice themselves to defeat the killer and ",  "will cry.But at the end we find out that ", 
+"was responsible for these deaths and they get arrested. Ultimately ","was the most heroic character. "]
+
 function season5(){
-    
+    localStorage.setItem("botscore",0)
+
     let storyArray = ["will be the main character this season. ", "will go missing and start the story. ",
      "wants to investigate but ", "protests against this ", ", ", ", ", "and " ,"go off to search for them. ", 
     "will find a clue while ", "solves it. Which leads them to believe that ","killed them. But they figure out that it was actually ", 
     ". ", "and ","will sacrifice themselves to defeat the killer and ",  "will cry.But at the end we find out that ", 
     "was responsible for these deaths and they get arrested. Ultimately ","was the most heroic character. "]
   
-    let newArray = storyArray.map(x=> `${mainCharacter()} ${x}`)
+    //let newArray = storyArray.map(x=> `${mainCharacter()} ${x}`)
 
-    document.querySelector('p').innerText = newArray.join(" ")
+    //document.querySelector('p').innerText = newArray.join(" ")
 
-    return newArray
+    document.querySelector('button').innerText = "what happens?"
+
+    document.querySelector('button').addEventListener('click', addLine)
+
+    
+    // document.querySelector('p').innerText = newArray[botscore]
+
+    // let charImageArray = newArray[botscore].split(" ")
+
+    // charImageArray=charImageArray[0]
+
+    // document.querySelector('img').src = "images/"+charImageArray+".png"
+
+
+
+
+    //return newArray
 }
 
 function mystery(){
@@ -85,6 +108,23 @@ let newlife = lifelist.map(x=> `${x} ${mainCharacter()}`)
 
 }
 
+function thisthat(){
+    let charsArray = characters
+    let char1 = mainCharacter()
+    let char2 = mainCharacter()
+
+    if (char1 != char2){}
+    //show images char1 char2
+    //clickon Image
+    //store  winner
+    //push characterout of array
+    //next set
+    // while charsArray.length > 0
+    //return winners in order 1st to last place
+    else {
+        document.querySelector('p').innerText = "its not nice to play favorites!"
+    }
+}
 // let buttonHome = document.querySelector("#s5pred");
 // let CountButtonHomeClicks = 0;
 // let char = []
@@ -109,3 +149,33 @@ document.getElementById("life").onclick = life
 
 
 document.getElementsByTagName("img").onclick = mainCharacter
+
+
+//count clicks
+if (!localStorage.getItem("botscore")){
+    localStorage.setItem("botscore",0)
+}
+
+
+//document.querySelector('button').addEventListener('click', add)
+
+function addLine(){
+    let botscore = Number(localStorage.getItem("botscore"))
+
+    let charChosen= mainCharacter()
+
+    document.querySelector('p').innerText = `${charChosen} ${storyArray[botscore]}`
+    
+    document.querySelector('img').src = "images/"+charChosen+".png"
+
+    botscore +=1
+    localStorage.setItem("botscore", botscore)
+
+    if (botscore==storyArray.length+1){
+        document.querySelector('p').innerText = `Don't be such a ${charChosen}, select a new game.`
+
+    }
+
+    
+
+}

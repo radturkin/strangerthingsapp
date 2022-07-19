@@ -78,25 +78,57 @@ function zombie(){
 
 function life(){
 
-let lifelist=["Your mom/dad: ",
-"\nYour mom/dad: ",
-"\nYour brother/sister: ",
-"\nYour brother/ sister: ",
-"\nYour BFF: ",
-"\nYour crush: ",
-"\nYour crush’s bf/gf: ",
-"\nYour idol: ",
-"\nYour Rival: ",
-"\nYour Bully: ",
-"\nFavorite teacher: ",
-"\nPet: ",
-"\nYou are: ",
-"\nWho does your BFF end up with: ",
-"\nWho does yout crush end up with: ",
-"\nWho do you end up with: "]
+let lifelist=[`Your parents: ${mainCharacter()} , and ${mainCharacter()}`,
 
-let newlife = lifelist.map(x=> `${x} ${mainCharacter()}`)
-    console.log(newlife)
+`\nYour siblings: ${mainCharacter()} and ${mainCharacter()}`,
+
+`\nYour BFF: ${mainCharacter()}`,
+`\nYour crush: ${mainCharacter()}`,
+`\nYour crush’s crush: ${mainCharacter()}`,
+`\nYour idol: ${mainCharacter()}`,
+`\nYour Rival: ${mainCharacter()}`,
+`\nYour Bully: ${mainCharacter()}`,
+`\nFavorite teacher: ${mainCharacter()}`,
+`\nPet: ${mainCharacter()}`,
+`\nYou are: ${mainCharacter()}`,
+`\nWho does your BFF end up with: ${mainCharacter()}`,
+`\nWho does yout crush end up with: ${mainCharacter()}`,
+`\nWho do you end up with: ${mainCharacter()}`]
+
+
+document.querySelector('#test').innerText = lifelist
+
+
+
+document.querySelector('button').addEventListener('click', addfamily)
+
+function addfamily(){
+    let botscore = Number(localStorage.getItem("botscore"))
+
+    let familyarray=[]
+    let charChosen= mainCharacter()
+    let familysegment = `${charChosen} ${lifelist[botscore]}`
+
+    familyarray.push(familysegment)
+
+    document.querySelector('p').innerText = familyarray
+    
+    document.querySelector('img').src = "images/"+charChosen+".png"
+
+    botscore +=1
+    localStorage.setItem("botscore", botscore)
+
+    if (botscore>=lifelist.length+1){
+        document.querySelector('p').innerText = `${charChosen} isn't going to be your mom, select a new game.`
+
+    }
+
+    
+
+}
+
+
+
 
     document.querySelector('p').innerText = newlife.join(" ")
 
@@ -158,6 +190,10 @@ function addLine(){
 
     let charChosen= mainCharacter()
 
+    // if(botscore>0){
+    //     document.querySelector('p').innerText = `${charChosen} ${storyArray[botscore-1]}`
+
+    // }
     document.querySelector('p').innerText = `${charChosen} ${storyArray[botscore]}`
     
     document.querySelector('img').src = "images/"+charChosen+".png"
@@ -165,7 +201,7 @@ function addLine(){
     botscore +=1
     localStorage.setItem("botscore", botscore)
 
-    if (botscore==storyArray.length+1){
+    if (botscore>=storyArray.length+1){
         document.querySelector('p').innerText = `Don't be such a ${charChosen}, select a new game.`
 
     }

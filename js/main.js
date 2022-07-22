@@ -12,6 +12,14 @@ function mainCharacter(){
     return characterChosen
 }
 
+function chooser(){
+
+    document.querySelector('button').innerText = "click for your random character"
+
+    document.querySelector('button').addEventListener('click', mainCharacter)
+
+}
+
 let storyArray = ["will be the main character this season. ", "will go missing and start the story. ",
 "wants to investigate but ", "protests against this ", ", ", ", ", "and " ,"go off to search for them. ", 
 "will find a clue while ", "solves it. Which leads them to believe that ","killed them. But they figure out that it was actually ", 
@@ -170,7 +178,7 @@ function thisthat(){
 document.getElementById("s5pred").onclick = season5
 document.getElementById("mystery").onclick = mystery
 document.getElementById("zombie").onclick = zombie
-document.getElementById("chooser").onclick = mainCharacter
+document.getElementById("chooser").onclick = chooser
 document.getElementById("life").onclick = life
 
 

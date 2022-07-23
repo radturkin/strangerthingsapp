@@ -171,6 +171,8 @@ function thisthat(){
         console.log(dict[char1])
         dict[char1]+=1
         console.log(dict)
+        thisthat()
+
    
 }
     let obj2 = document.getElementById("char2")
@@ -179,6 +181,7 @@ function thisthat(){
     console.log(dict[char2])
     dict[char2]+=1
     console.log(dict)
+    thisthat()
 
 }
     

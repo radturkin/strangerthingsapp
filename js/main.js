@@ -153,7 +153,10 @@ function thisthat(){
     console.log(char1)
     console.log(char2)
     document.querySelector('button').innerText = "next this or that"
-    //document.querySelector('button').addEventListener('click', thisthat)
+    document.querySelector('button').addEventListener('click', thisthat)
+    document.querySelector('#b2').innerText = "tally favorite"
+    document.querySelector('#b2').addEventListener('click', function(){tally(dict)})
+
 
 
     // if (char1 != char2){
@@ -162,8 +165,8 @@ function thisthat(){
     document.querySelector('#mainImage').src = char1Image
     document.querySelector('#char2').src = char2Image
     console.log(dict)
-    document.querySelector("#mainImage").addEventListener('click', function(){choice(char1)})
-    document.querySelector("#char2").addEventListener('click', function(){choice(char2)})
+    document.querySelector("#mainImage").addEventListener('click', function(){dict[char1]+=1})
+    document.querySelector("#char2").addEventListener('click', function(){dict[char2]+=1})
 
     
     // else {
@@ -187,12 +190,22 @@ document.getElementById("chooser").onclick = chooser
 document.getElementById("life").onclick = life
 document.getElementById("thisorthat").onclick = thisthat
 
+function tally(dict){
+    let best= Object.keys(dict).reduce(function(a, b){ return dict[a] > dict[b] ? a : b });
+    console.log(best)
+    const maxValue = Object.entries(dict).sort((x, y) => y[1] - x[1])[0];
+    console.log(maxValue)
+    document.querySelector('p').innerText = `Your favorite is ${maxValue[0]}`
+
+
+
+}
 
 function choice(charname){
     console.log(dict[charname])
     dict[charname]+=1
     console.log(dict)
-    thisthat()
+    //document.querySelector("button").addEventListener('click', function(){thisthat})
 }
 
 

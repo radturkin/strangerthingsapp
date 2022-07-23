@@ -192,6 +192,7 @@ function choice(charname){
     console.log(dict[charname])
     dict[charname]+=1
     console.log(dict)
+    thisthat()
 }
 
 

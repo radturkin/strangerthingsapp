@@ -7,7 +7,7 @@ let characters = ["Steve", "Nancy", "Robin", "Will", "Mike", "Joyce", "Barb", "J
 function mainCharacter(){
     characterChosen = characters[Math.floor(Math.random()*characters.length)];
     srci="images/"+characterChosen+".png"
-    document.querySelector('img').src = srci
+    document.querySelector('#mainImage').src = srci
     document.querySelector('h1').innerText = `Your Random Character is ${characterChosen}`
     return characterChosen
 }
@@ -146,8 +146,32 @@ function thisthat(){
     let charsArray = characters
     let char1 = mainCharacter()
     let char2 = mainCharacter()
+    let dict={}
+    document.querySelector('button').innerText = "next this or that"
 
-    if (char1 != char2){}
+    if (char1 != char2){
+        let char1Image="images/"+char1+".png"
+        let char2Image="images/"+char2+".png"
+        document.querySelector('#mainImage').src = char1Image
+        document.querySelector('#char2').src = char2Image
+        document.getElementById("#mainImage").onclick = choice1
+        document.getElementById("#char2").onclick = choice2
+
+    }
+    else {
+        document.querySelector('p').innerText = "its not nice to play favorites!"
+    }
+    function choice1(){
+        if (dict[char1]>0){dict[char1]+=1}
+        else{dict[char1]=1}
+        console.log(dict)
+    }
+    function choice2(){
+        if (dict[char2]>0){dict[char1]+=1}
+        else{dict[char2]=1}
+        console.log(dict)
+
+    }
     //show images char1 char2
     //clickon Image
     //store  winner
@@ -155,9 +179,7 @@ function thisthat(){
     //next set
     // while charsArray.length > 0
     //return winners in order 1st to last place
-    else {
-        document.querySelector('p').innerText = "its not nice to play favorites!"
-    }
+  
 }
 // let buttonHome = document.querySelector("#s5pred");
 // let CountButtonHomeClicks = 0;
@@ -180,6 +202,8 @@ document.getElementById("mystery").onclick = mystery
 document.getElementById("zombie").onclick = zombie
 document.getElementById("chooser").onclick = chooser
 document.getElementById("life").onclick = life
+document.getElementById("thisorthat").onclick = thisthat
+
 
 
 document.getElementsByTagName("img").onclick = mainCharacter

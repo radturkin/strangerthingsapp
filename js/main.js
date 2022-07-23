@@ -141,11 +141,12 @@ function addfamily(){
     document.querySelector('p').innerText = newlife.join(" ")
 
 }
-let dict = { "Steve":0, "Nancy":0, "Robin":0, "Will":0, "Mike":0, "Joyce":0, "Barb":0, 
-"Yuri":0, "Fred":0, "Erica":0, "Dustin":0, "Hopper":0, "Chrissy":0, "Murray:":0, "Billy":0, 
-"Eleven":0, "Max":0, "Lucas":0, "Bob":0, "Angela":0, "Suzie":0, "Mrs. Wheeler":0, "Argyle":0, 
-"Mr.Wheeler":0, "Eddie":0, "Dr. Brenner":0, "Dr. Owens":0, 
-"010":0, "008":0, "Vickie":0, "Jason":0, "Fred":0, "Victor Creel":0, "Alexei":0, "Heather":0}
+
+let dict = { "Steve":0, "Nancy":0, "Robin":0, "Will":0, "Mike":0, "Joyce":0, "Barb":0, "Yuri":0, "Fred":0, 
+"Erica":0, "Dustin":0, "Hopper":0, "Chrissy":0, "Murray":0, "Billy":0, "Eleven":0, "Max":0, "Lucas":0, 
+"Bob":0, "Angela":0, "Suzie":0, "Mrs.Wheeler":0, "Argyle":0, "Mr.Wheeler":0, "Eddie":0, "Dr.Brenner":0, 
+"Dr. Owens":0, "010":0, "008":0, 
+"Vickie":0, "Jason":0, "Fred":0, "Victor Creel":0, "Alexei":0, "Heather":0, "Jonathan":0, "Dr.Owens":0} 
 function thisthat(){
     let char1=''
     let char2=''

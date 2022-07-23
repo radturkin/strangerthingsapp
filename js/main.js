@@ -147,27 +147,40 @@ let dict = { "Steve":0, "Nancy":0, "Robin":0, "Will":0, "Mike":0, "Joyce":0, "Ba
 "Mr.Wheeler":0, "Eddie":0, "Dr. Brenner":0, "Dr. Owens":0, 
 "010":0, "008":0, "Vickie":0, "Jason":0, "Fred":0, "Victor Creel":0, "Alexei":0, "Heather":0}
 function thisthat(){
+    let char1=''
+    let char2=''
     let charsArray = characters
-    let char1 = mainCharacter()
-    let char2 = mainCharacter()
+    char1 = mainCharacter()
+    char2 = mainCharacter()
     console.log(char1)
     console.log(char2)
     document.querySelector('button').innerText = "next this or that"
     document.querySelector('button').addEventListener('click', thisthat)
     document.querySelector('#b2').innerText = "tally favorite"
     document.querySelector('#b2').addEventListener('click', function(){tally(dict)})
+  
 
-
-
-    // if (char1 != char2){
     let char1Image="images/"+char1+".png"
     let char2Image="images/"+char2+".png"
     document.querySelector('#mainImage').src = char1Image
     document.querySelector('#char2').src = char2Image
     console.log(dict)
-    document.querySelector("#mainImage").addEventListener('click', function(){dict[char1]+=1})
-    document.querySelector("#char2").addEventListener('click', function(){dict[char2]+=1})
+    console.log(typeof char1)
+    let obj1 = document.getElementById("mainImage")
+    obj1.onclick = function() {
+        console.log(dict[char1])
+        dict[char1]+=1
+        console.log(dict)
+   
+}
+    let obj2 = document.getElementById("char2")
 
+    obj2.onclick = function() {
+    console.log(dict[char2])
+    dict[char2]+=1
+    console.log(dict)
+
+}
     
     // else {
     document.querySelector('p').innerText = "its not nice to play favorites!"
@@ -201,10 +214,24 @@ function tally(dict){
 
 }
 
-function choice(charname){
-    console.log(dict[charname])
-    dict[charname]+=1
+function choice1(char1){
+    console.log(dict[char1])
+    dict[char1]+=1
     console.log(dict)
+    document.querySelector("#mainImage").removeEventListener('click', function(){choice1(char1)})
+
+
+ 
+    //document.querySelector("button").addEventListener('click', function(){thisthat})
+}
+function choice2(char2){
+    console.log(dict[char2])
+    dict[char2]+=1
+    console.log(dict)    
+    document.querySelector("#char2").removeEventListener('click', function(){choice2(char2)})
+
+
+ 
     //document.querySelector("button").addEventListener('click', function(){thisthat})
 }
 

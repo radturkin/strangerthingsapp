@@ -141,37 +141,35 @@ function addfamily(){
     document.querySelector('p').innerText = newlife.join(" ")
 
 }
-
+let dict = { "Steve":0, "Nancy":0, "Robin":0, "Will":0, "Mike":0, "Joyce":0, "Barb":0, 
+"Yuri":0, "Fred":0, "Erica":0, "Dustin":0, "Hopper":0, "Chrissy":0, "Murray:":0, "Billy":0, 
+"Eleven":0, "Max":0, "Lucas":0, "Bob":0, "Angela":0, "Suzie":0, "Mrs. Wheeler":0, "Argyle":0, 
+"Mr.Wheeler":0, "Eddie":0, "Dr. Brenner":0, "Dr. Owens":0, 
+"010":0, "008":0, "Vickie":0, "Jason":0, "Fred":0, "Victor Creel":0, "Alexei":0, "Heather":0}
 function thisthat(){
     let charsArray = characters
     let char1 = mainCharacter()
     let char2 = mainCharacter()
-    let dict={}
+    console.log(char1)
+    console.log(char2)
     document.querySelector('button').innerText = "next this or that"
+    //document.querySelector('button').addEventListener('click', thisthat)
 
-    if (char1 != char2){
-        let char1Image="images/"+char1+".png"
-        let char2Image="images/"+char2+".png"
-        document.querySelector('#mainImage').src = char1Image
-        document.querySelector('#char2').src = char2Image
-        document.getElementById("#mainImage").onclick = choice1
-        document.getElementById("#char2").onclick = choice2
 
-    }
-    else {
-        document.querySelector('p').innerText = "its not nice to play favorites!"
-    }
-    function choice1(){
-        if (dict[char1]>0){dict[char1]+=1}
-        else{dict[char1]=1}
-        console.log(dict)
-    }
-    function choice2(){
-        if (dict[char2]>0){dict[char1]+=1}
-        else{dict[char2]=1}
-        console.log(dict)
+    // if (char1 != char2){
+    let char1Image="images/"+char1+".png"
+    let char2Image="images/"+char2+".png"
+    document.querySelector('#mainImage').src = char1Image
+    document.querySelector('#char2').src = char2Image
+    console.log(dict)
+    document.querySelector("#mainImage").addEventListener('click', function(){choice(char1)})
+    document.querySelector("#char2").addEventListener('click', function(){choice(char2)})
 
-    }
+    
+    // else {
+    document.querySelector('p').innerText = "its not nice to play favorites!"
+    
+
     //show images char1 char2
     //clickon Image
     //store  winner
@@ -181,22 +179,7 @@ function thisthat(){
     //return winners in order 1st to last place
   
 }
-// let buttonHome = document.querySelector("#s5pred");
-// let CountButtonHomeClicks = 0;
-// let char = []
-// buttonHome.addEventListener("click", function() {
-//   CountButtonHomeClicks += 1;
-//   console.log(CountButtonHomeClicks);
-//   char=newArray[CountButtonHomeClicks];
-//   char=char.split(" ");
-//   guy=char[0];
-//     srci="images/"+guy+".png"
-//     document.querySelector('img').src = srci
-//     document.querySelector('h1').innerText = `Your Random Character is ${guy}`
 
-//   document.querySelector('p').innerText = newArray[CountButtonHomeClicks]
-//   return CountButtonHomeClicks
-// });
 document.getElementById("s5pred").onclick = season5
 document.getElementById("mystery").onclick = mystery
 document.getElementById("zombie").onclick = zombie
@@ -204,6 +187,12 @@ document.getElementById("chooser").onclick = chooser
 document.getElementById("life").onclick = life
 document.getElementById("thisorthat").onclick = thisthat
 
+
+function choice(charname){
+    console.log(dict[charname])
+    dict[charname]+=1
+    console.log(dict)
+}
 
 
 document.getElementsByTagName("img").onclick = mainCharacter

@@ -4,6 +4,9 @@ let characters = ["Steve", "Nancy", "Robin", "Will", "Mike", "Joyce", "Barb", "J
 "Eddie", "Dr.Brenner", "Dr.Owens", "010", "008", 
 "Vickie", "Jason", "Fred", "Victor Creel", "Alexei", "Heather"];
 
+let paragraph = ""
+
+
 function mainCharacter(){
     characterChosen = characters[Math.floor(Math.random()*characters.length)];
     srci="images/"+characterChosen+".png"
@@ -83,7 +86,7 @@ function zombie(){
 
     return newzombie
 }
-
+addLine
 function life(){
 
 let lifelist=[`Your parents: ${mainCharacter()} , and ${mainCharacter()}`,
@@ -222,7 +225,8 @@ function choice1(char1){
     console.log(dict[char1])
     dict[char1]+=1
     console.log(dict)
-    document.querySelector("#mainImage").removeEventListener('click', function(){choice1(char1)})
+    document.querySelectorlocalStorage.setItem("counter", countClick)
+    ("#mainImage").removeEventListener('click', function(){choice1(char1)})
 
 
  
@@ -259,8 +263,10 @@ function addLine(){
     // if(botscore>0){
     //     document.querySelector('p').innerText = `${charChosen} ${storyArray[botscore-1]}`
 
-    // }
-    document.querySelector('p').innerText = `${charChosen} ${storyArray[botscore]}`
+    let paragraphLine=`${charChosen} ${storyArray[botscore]}`
+    let para = paragraph.concat(" ", paragraphLine);
+    paragraph=para
+    document.querySelector('p').innerText = String(paragraph)
     
     document.querySelector('img').src = "images/"+charChosen+".png"
 

@@ -59,16 +59,17 @@ function season5(){
 }
 
 function mystery(){
-    let lineup = ["dies.", "finds the body.", "is the most sad.", "is the lead detective.", 
+    let mys = new Game(["dies.", "finds the body.", "is the most sad.", "is the lead detective.", 
     "is the first suspect.",
     "is their alibi.", ", ", ", and ", "are the final three suspects.", "is arrested.", 
-    "was the killer.", "was the accomplice."]
-    let newArray = lineup.map(x=> `${mainCharacter()} ${x}`)
-    console.log(newArray)
-
-    document.querySelector('p').innerText = newArray.join(" ")
-
-    return newArray
+    "was the killer.", "was the accomplice."], 
+    "Solve the mystery", `Don't be such a ${charChosen}, select a new game.`)
+    //let newArray = lineup.map(x=> `${mainCharacter()} ${x}`)
+    //console.log(newArray)
+    let storyArray=mys.storyArray
+    localStorage.setItem("botscore",0)
+    document.querySelector('button').innerText = mys.buttonText
+    document.querySelector('button').addEventListener('click', addLine)
 }
 
 function zombie(){

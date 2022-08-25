@@ -32,27 +32,9 @@ let storyArray = ["will be the main character this season. ", "will go missing a
 function season5(){
     localStorage.setItem("botscore",0)
 
-    //let newArray = storyArray.map(x=> `${mainCharacter()} ${x}`)
-
-    //document.querySelector('p').innerText = newArray.join(" ")
-
     document.querySelector('button').innerText = "what happens season 5?"
-
     document.querySelector('button').addEventListener('click', addLine)
 
-    
-    // document.querySelector('p').innerText = newArray[botscore]
-
-    // let charImageArray = newArray[botscore].split(" ")
-
-    // charImageArray=charImageArray[0]
-
-    // document.querySelector('img').src = "images/"+charImageArray+".png"
-
-
-
-
-    //return newArray
 }
 
 function mystery(){
@@ -127,7 +109,7 @@ function addfamily(){
     document.querySelector('img').src = "images/"+charChosen+".png"
 
     botscore +=1
-    localStorage.setItem("botscore", botscore)
+    localStorage.setItem("botscore", botscore);
 
     if (botscore>=lifelist.length+1){
         document.querySelector('p').innerText = `${charChosen} isn't going to be your mom, select a new game.`
@@ -189,17 +171,7 @@ function thisthat(){
 
 }
     
-    // else {
     document.querySelector('p').innerText = "its not nice to play favorites!"
-    
-
-    //show images char1 char2
-    //clickon Image
-    //store  winner
-    //push characterout of array
-    //next set
-    // while charsArray.length > 0
-    //return winners in order 1st to last place
   
 }
 
@@ -227,20 +199,12 @@ function choice1(char1){
     console.log(dict)
     document.querySelectorlocalStorage.setItem("counter", countClick)
     ("#mainImage").removeEventListener('click', function(){choice1(char1)})
-
-
- 
-    //document.querySelector("button").addEventListener('click', function(){thisthat})
 }
 function choice2(char2){
     console.log(dict[char2])
     dict[char2]+=1
     console.log(dict)    
     document.querySelector("#char2").removeEventListener('click', function(){choice2(char2)})
-
-
- 
-    //document.querySelector("button").addEventListener('click', function(){thisthat})
 }
 
 
@@ -252,16 +216,10 @@ if (!localStorage.getItem("botscore")){
     localStorage.setItem("botscore",0)
 }
 
-
-//document.querySelector('button').addEventListener('click', add)
-
 function addLine(){
     let botscore = Number(localStorage.getItem("botscore"))
 
     let charChosen= mainCharacter()
-
-    // if(botscore>0){
-    //     document.querySelector('p').innerText = `${charChosen} ${storyArray[botscore-1]}`
 
     let paragraphLine=`${charChosen} ${storyArray[botscore]}`
     let para = paragraph.concat(" ", paragraphLine);

@@ -75,5 +75,37 @@ document.getElementById("s5pred").onclick = season5
 //mixins, prototypes,
 
 class LivingThings{
-    constructor(livingname, age, strength, agility, IQ, wisdom, speed, health, trust, posChem, NegChem, items, mainAttack, specialAttack)
+    constructor(livingname, age, strength, agility, IQ, wisdom, speed, health, trust, posChem, 
+        NegChem, items, mainAttack, specialAttack){
+            this.livingname=livingname
+            this.age=age
+            this.strength=strength
+            this.agility=agility
+            this.IQ=IQ
+            this.wisdom=wisdom
+            this.speed=speed
+            this.health=health
+            this.trust=trust
+            this.posChem=posChem
+            this.NegChem=NegChem
+            this.items=items
+            this.mainAttack=mainAttack
+            this.specialAttack=specialAttack
+        }
+        attack(){
+            return `${this.livingname} attacks with ${this.mainAttack}`
+        }
+        special(){
+            return `${this.livingname} attacks with ${this.specialAttack}`
+        }
+        damage(damageAmount){
+
+            this.health=this.health-damageAmount
+            if(this.health<=0){
+                return `NOOOOO!!!!!!!!!!!!!!! ${this.livingname} has been consumed by the upside down, they dead`
+            }
+            else{
+                return `${this.livingname} takes ${damageAmount} damage their health is now ${this.health}`
+            }
+        }
 }

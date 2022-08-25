@@ -15,6 +15,20 @@ function mainCharacter(){
     return characterChosen
 }
 
+class Game{
+    constructor(storyArray, buttonText, alertText){
+        this.storyArray=storyArray;
+        this.buttonText=buttonText;
+        this.alertText=alertText;
+        localStorage.setItem("botscore",0)
+        document.querySelector('button').innerText = this.buttonText
+        document.querySelector('button').addEventListener('click', this.addLine)
+    }
+    // addline(){
+        
+
+    // }
+}
 function chooser(){
 
     document.querySelector('button').innerText = "click for your random character"
@@ -29,13 +43,20 @@ function chooser(){
 // ". ", "and ","will sacrifice themselves to defeat the killer and ",  "will cry.But at the end we find out that ", 
 // "was responsible for these deaths and they get arrested. Ultimately ","was the most heroic character. "]
 
-// function season5(){
-//     localStorage.setItem("botscore",0)
+function season5(){
+    let s5 = new Game(["will be the main character this season. ", "will go missing and start the story. ",
+    "wants to investigate but ", "protests against this ", ", ", ", ", "and " ,"go off to search for them. ", 
+    "will find a clue while ", "solves it. Which leads them to believe that ","killed them. But they figure out that it was actually ", 
+    ". ", "and ","will sacrifice themselves to defeat the killer and ",  "will cry.But at the end we find out that ", 
+    "was responsible for these deaths and they get arrested. Ultimately ","was the most heroic character. "], 
+    "what happens season 5?", `Don't be such a ${charChosen}, select a new game.`)
+    let storyArray=s5.storyArray
+    localStorage.setItem("botscore",0)
 
-//     document.querySelector('button').innerText = "what happens season 5?"
-//     document.querySelector('button').addEventListener('click', addLine)
+    document.querySelector('button').innerText = s5.buttonText
+    document.querySelector('button').addEventListener('click', addLine)
 
-// }
+}
 
 function mystery(){
     let lineup = ["dies.", "finds the body.", "is the most sad.", "is the lead detective.", 
@@ -215,55 +236,31 @@ if (!localStorage.getItem("botscore")){
     localStorage.setItem("botscore",0)
 }
 
-// function addLine(){
-//     let botscore = Number(localStorage.getItem("botscore"))
+function addLine(){
+    let botscore = Number(localStorage.getItem("botscore"))
 
-//     let charChosen= mainCharacter()
+    let charChosen= mainCharacter()
 
-//     let paragraphLine=`${charChosen} ${storyArray[botscore]}`
-//     let para = paragraph.concat(" ", paragraphLine);
-//     paragraph=para
-//     document.querySelector('p').innerText = String(paragraph)
+    let paragraphLine=`${charChosen} ${storyArray[botscore]}`
+    let para = paragraph.concat(" ", paragraphLine);
+    paragraph=para
+    document.querySelector('p').innerText = String(paragraph)
     
-//     document.querySelector('img').src = "images/"+charChosen+".png"
+    document.querySelector('img').src = "images/"+charChosen+".png"
 
-//     botscore +=1
-//     localStorage.setItem("botscore", botscore)
+    botscore +=1
+    localStorage.setItem("botscore", botscore)
 
-//     if (botscore>=storyArray.length+1){
-//         document.querySelector('p').innerText = `Don't be such a ${charChosen}, select a new game.`
+    if (botscore>=storyArray.length+1){
+        document.querySelector('p').innerText = `Don't be such a ${charChosen}, select a new game.`
 
-//     }
+    }
 
     
 
 // }
 
-class Game{
-    constructor(storyArray, buttonText, alertText){
-        this.storyArray=storyArray;
-        this.buttonText=buttonText;
-        this.alertText=alertText;
-        localStorage.setItem("botscore",0)
-        document.querySelector('button').innerText = this.buttonText
-        document.querySelector('button').addEventListener('click', this.addLine)
-    }
-    addline(){
-        let botscore = Number(localStorage.getItem("botscore"))
-        let charChosen= mainCharacter()
-        let paragraphLine=`${charChosen} ${this.storyArray[botscore]}`
-        let para = paragraph.concat(" ", paragraphLine);
-        paragraph=para
-        document.querySelector('p').innerText = String(paragraph)
-        document.querySelector('img').src = "images/"+charChosen+".png"
-        botscore +=1
-        localStorage.setItem("botscore", botscore)
-        //varied
-        if (botscore>=storyArray.length+1){
-            document.querySelector('p').innerText = this.alertText
 
-    }
-}
 
 // function addLine(){
 
@@ -303,13 +300,7 @@ class Game{
 
 // }
 let charChosen=mainCharacter()
-const season5 = new Game(["will be the main character this season. ", "will go missing and start the story. ",
-"wants to investigate but ", "protests against this ", ", ", ", ", "and " ,"go off to search for them. ", 
-"will find a clue while ", "solves it. Which leads them to believe that ","killed them. But they figure out that it was actually ", 
-". ", "and ","will sacrifice themselves to defeat the killer and ",  "will cry.But at the end we find out that ", 
-"was responsible for these deaths and they get arrested. Ultimately ","was the most heroic character. "], 
-"what happens season 5?", `Don't be such a ${charChosen}, select a new game.`)
 
-document.getElementById("s5pred").onclick = season5.addline()
+document.getElementById("s5pred").onclick = season5
 
 console.log(season5)

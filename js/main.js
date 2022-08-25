@@ -31,6 +31,8 @@ class Game{
 }
 function chooser(){
 
+    reset()
+
     document.querySelector('button').innerText = "click for your random character"
 
     document.querySelector('button').addEventListener('click', mainCharacter)

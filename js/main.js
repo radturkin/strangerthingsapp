@@ -108,6 +108,7 @@ function zombie(){
 
 }
 function life(){
+    reset()
 
 let lifelist=new Game([`Your parents: ${mainCharacter()} , and ${mainCharacter()}`,
 
@@ -125,7 +126,7 @@ let lifelist=new Game([`Your parents: ${mainCharacter()} , and ${mainCharacter()
 `\nWho does your BFF end up with: ${mainCharacter()}`,
 `\nWho does yout crush end up with: ${mainCharacter()}`,
 `\nWho do you end up with: ${mainCharacter()}`],"Who's your mother?", 
-"`${charChosen} isn't going to be your mom, select a new game.")
+`${charChosen} isn't going to be your mom, select a new game.`)
 
 
 storyArray = lifelist.storyArray

@@ -139,7 +139,7 @@ function addfamily(){
 
     let familyarray=[]
     let charChosen= mainCharacter()
-    let familysegment = `${charChosen} ${lifelist[botscore]}`
+    let familysegment = `${lifelist[botscore]}`
 
     familyarray.push(familysegment)
 

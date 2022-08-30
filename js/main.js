@@ -131,9 +131,8 @@ let lifelist=new Game([`Your parents: ${mainCharacter()} , and ${mainCharacter()
 
 storyArray = lifelist.storyArray
 document.querySelector('button').innerText = lifelist.buttonText
-document.querySelector('button').addEventListener('click', addLine)
+document.querySelector('button').addEventListener('click', addfamily)
 
-document.querySelector('button').addEventListener('click', addLine)
 
 function addfamily(){
     let botscore = Number(localStorage.getItem("botscore"))
@@ -217,6 +216,10 @@ document.getElementById("zombie").onclick = zombie
 document.getElementById("chooser").onclick = chooser
 document.getElementById("life").onclick = life
 document.getElementById("thisorthat").onclick = thisthat
+document.getElementById("s5pred").onclick = season5
+document.getElementsByTagName("img").onclick = mainCharacter
+
+
 
 function tally(dict){
     let best= Object.keys(dict).reduce(function(a, b){ return dict[a] > dict[b] ? a : b });
@@ -244,7 +247,6 @@ function choice2(char2){
 }
 
 
-document.getElementsByTagName("img").onclick = mainCharacter
 
 
 //count clicks
@@ -279,8 +281,5 @@ function addLine(){
 
 
 
-//let charChosen=mainCharacter()
 
-document.getElementById("s5pred").onclick = season5
 
-//console.log(season5)

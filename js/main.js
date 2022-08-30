@@ -279,8 +279,8 @@ function addLine(){
 
 
 
-let charChosen=mainCharacter()
+//let charChosen=mainCharacter()
 
 document.getElementById("s5pred").onclick = season5
 
-console.log(season5)
+//console.log(season5)

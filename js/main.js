@@ -110,7 +110,7 @@ function zombie(){
 function life(){
     reset()
 
-let lifelist=new Game([`Your parents: ${mainCharacter()} , and ${mainCharacter()}`,
+let lifelist=new Game([`Your parents: ${charChosen}` , `and ${charChosen}`,
 
 `\nYour siblings: ${mainCharacter()} and ${mainCharacter()}`,
 
@@ -259,7 +259,10 @@ function addLine(){
 
     let charChosen= mainCharacter()
 
-    let paragraphLine=`${charChosen} ${storyArray[botscore]}`
+    let paragraphLine=`${storyArray[botscore]}`
+
+
+    //let paragraphLine=`${charChosen} ${storyArray[botscore]}`
     let para = paragraph.concat(" ", paragraphLine);
     paragraph=para
     document.querySelector('p').innerText = String(paragraph)

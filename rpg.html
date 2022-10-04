@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+		<link rel="icon" href="images/eddieicon.png">
+
+		<title>Stranger Things RPG</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+
+        <h1 id="RPGTitle">Welcome to the Stranger Things RPG</h1>
+        <p id="RPGintro">Choose your Character</p>
+        <label for="pet-select">Choose an adventurer:</label>
+
+        <select id="char-select" onchange="changeResult()">
+            <option selected disabled>--Please choose an option--</option>
+            <option value="Dustin">Dustin</option>
+            <option value="Eleven">Eleven</option>
+            <option value="Max">Max</option>
+            <option value="Mike">Mike</option>
+            <option value="Nancy">Nancy</option>
+            <option value="Steve">Steve</option>
+        </select>
+
+        <p id="result"></p>
+
+        <p>If this is correct click enter... if you dare</p>
+        <button id="enterStory">Enter</button>
+
+                
+
+		<script type="text/javascript" src="js/rpg.js"></script>
+	</body>
+</html>

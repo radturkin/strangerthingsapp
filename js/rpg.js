@@ -18,6 +18,7 @@ let villainobj = {"001":{
   }
 }
 var x
+
 function changeResult() {
     x = document.getElementById("char-select").value;
     document.getElementById("result").innerHTML = "You selected: " + x;
@@ -31,11 +32,14 @@ function changeResult() {
 x=changeResult()
 console.log("yourecharacter "+x)
 
+document.getElementById("enterStory").onclick = enterGame
 
-document.getElementById('enterStory').addEventListener('click', enterGame(x))
+//document.getElementById('enterStory').addEventListener('click', enterGame(x))
 
 function enterGame(x){
     console.log("hi "+x)
+    document.getElementById('rpgstory').innerText = `You are about to enter on a most dangerous quest, you can go back but you friends will not be saved`
+
 
 }
 //create character objects

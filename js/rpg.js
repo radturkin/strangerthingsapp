@@ -38,8 +38,8 @@ document.getElementById("enterStory").onclick = enterGame
 
 function enterGame(x){
     console.log("hi "+x)
-    document.getElementById('rpgstory').innerText = `You are about to enter on a most dangerous quest, you can go back but you friends will not be saved`
-
+    document.getElementById('rpgstory').innerText = `You are about to enter on a most dangerous quest, 
+    you can go back but your friends will not be saved`
 
 }
 //create character objects
@@ -53,8 +53,14 @@ console.log(charobj)
 console.log(villainobj)
 
 //adjust to be total strength as variable for attack times handicap
+//click to roll
+
+document.getElementById("diceroll").onclick = d20
+
 function d20(){
   roll=Math.ceil(Math.random()*20)
+  document.getElementById('rollreader').innerText = `You rolled a ${roll}` 
+
   return roll
 }
 let attack=d20()
